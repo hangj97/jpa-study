@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--xml 네임 스페이스(xmlns) 정의 + 사용 버전 명시-->
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
-
+    <!--영속성 유닛부터 시작. -> 연결할 디비 당 하나의 영속성 유닛 등록 -> 영속성 유닛에는 고유 이름 부여-->
     <persistence-unit name="jpabook">
-
         <properties>
-
             <!-- 필수 속성 -->
-            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value=""/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/> <!-- JDBC 드라이버 -->
+            <property name="javax.persistence.jdbc.user" value="sa"/>   <!-- 디비 접속 아이디 -->
+            <property name="javax.persistence.jdbc.password" value=""/>     <!-- 디비 접속 패스워드 -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/test"/> <!-- 디비 접속 url -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" /> <!-- 디비 방언 설정 -->
 
             <!-- 옵션 -->
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.format_sql" value="true" />
-            <property name="hibernate.use_sql_comments" value="true" />
-            <property name="hibernate.id.new_generator_mappings" value="true" />
+            <property name="hibernate.show_sql" value="true" /> <!-- 하이버네이트가 실행한 sql 출력 -->
+            <property name="hibernate.format_sql" value="true" />   <!-- 하이버네이트가 실행한 sql 출력할 때 pretty 정렬 -->
+            <property name="hibernate.use_sql_comments" value="true" /> <!-- 쿼리를 출력할 때 주석도 함께 출력 -->
+            <property name="hibernate.id.new_generator_mappings" value="true" /> <!-- jpa 표준에 맞게 새로운 키 생성 전략 사용 -->
 
             <!--<property name="hibernate.hbm2ddl.auto" value="create" />-->
         </properties>
     </persistence-unit>
-
 </persistence>
