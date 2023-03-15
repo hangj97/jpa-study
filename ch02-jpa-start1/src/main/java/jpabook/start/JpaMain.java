@@ -21,7 +21,7 @@ public class JpaMain {
          */
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpabook");
         EntityManager em = emf.createEntityManager();       // 엔티티 매니저 생성
-        EntityTransaction tx = em.getTransaction();         // 트랜잭션 획득
+        EntityTransaction tx = em.getTransaction();         // 트랜잭션 획득 -> 이때 엔티티 매니저가 커넥션 획득.
 
         try {
             tx.begin();                                     // 트랜잭션 시작
@@ -39,6 +39,7 @@ public class JpaMain {
     // 비즈니스 로직
     private static void logic(EntityManager em) {
 
+        // 비영속 상태의 데이터
         String id = "id1";
         Member member = new Member();
         member.setId(id);
@@ -46,6 +47,7 @@ public class JpaMain {
         member.setAge(22);
 
         // 등록
+        // 영속성 컨텍스트 관리 시작 -> em.persist -> 하나의 em에 하나의 영속성 컨텍스트 생성 됨.
         em.persist(member);
 
         // 수정
