@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity                     // 해당 어노테이션이 붙어있는 클래스를 테이블과 매핑한다고 JPA에게 알림.
+@Entity                     // 해당 어노테이션이 붙어있는 클래스를 테이블과 매핑한다고 JPA 에게 알림.
 @Table(name = "MEMBER")     // 엔티티 클래스에 매핑할 테이블 정보를 알려줌.
 public class Member {
 
