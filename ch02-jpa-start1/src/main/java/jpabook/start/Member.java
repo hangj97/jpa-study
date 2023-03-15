@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name = "MEMBER")     // 엔티티 클래스에 매핑할 테이블 정보를 알려줌.
 public class Member {
 
-    @Id                     // 기본 키 매핑 -> id 필드를 테이블의 id 기본 키 ㅋ러럼에 매핑 식별자 필드
+    @Id                     // 기본 키 매핑 -> id 필드를 테이블의 id 기본 키 컬럼에 매핑 식별자 필드
     @Column(name = "ID")    // 필드를 컬럼에 매용
     private String id;
 
